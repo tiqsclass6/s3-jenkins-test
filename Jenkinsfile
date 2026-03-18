@@ -6,10 +6,6 @@ pipeline {
         TF_IN_AUTOMATION   = 'true'
     }
 
-    tools {
-        terraform 'terraform'
-    }
-
     stages {
         stage('Checkout') {
             steps {
