@@ -1,24 +1,24 @@
 # Add GitHub Webhook Trigger to Jenkins
 
 ## Prerequisites
+
 - Jenkins running on EC2
 - Jenkins reachable from the internet (e.g. `http://<EC2-PUBLIC-IP>:8080`)
-- Repo with Jenkinsfile and terraform script 
+- Repo with Jenkinsfile and terraform script
 - Github and git plugins
 
 ---
 
-
 ## Jenkins Config
 
-### Make a pipeline 
+### Make a pipeline
 
 1. Jenkins dashboard → New Item
 2. Name it
 3. Select: Pipeline
 4. Click OK
 
-### Enable GitHub Trigger 
+### Enable GitHub Trigger
 
 In job configuration:
 
@@ -34,14 +34,12 @@ In job configuration:
 - Script Path:
   Jenkinsfile
 
-
-
-
 Save pipeline
 
 ---
 
-## Add GitHub Webhook 
+## Add GitHub Webhook
+
 Go to Github
 
 Repository → Settings → Webhooks → Add webhook
@@ -62,37 +60,40 @@ Save
 ## Test
 
 Option A:
+
 ```bash
 git commit --allow-empty -m "test webhook"
 git push origin main
 ```
 
 Option B:
+
 - GitHub → Webhook → Recent Deliveries
 - Redeliver
 
 ---
 
-
-
-
-
 ## Troubleshooting
 
 ### Expected Result
+
 - Push event occurs on repo
 - Webhook sent from GitHub
 - Jenkins job starts automatically
 
 ### Common issues
+
 Jenkins not reachable:
+
 - Ensure public IP or DNS
 - Open port 8080 in security group
 
 Incorrect webhook URL:
+
 - Must end with `/github-webhook/`
 
 No build triggered:
+
 - Verify trigger enabled in Jenkins
 - Check webhook delivery status (200 OK)
 
@@ -107,6 +108,7 @@ A webhook is an HTTP callback.
 - It is event-driven
 
 In this case:
+
 - GitHub = sender
 - Jenkins = receiver
 
