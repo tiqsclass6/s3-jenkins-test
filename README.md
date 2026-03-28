@@ -52,4 +52,4 @@ A simple declarative [**Jenkinsfile**](Jenkinsfile):
 - **S3 Bucket Output**
   - ![s3-bucket.jpg](/images/s3-bucket.jpg)
 - **T.I.Q.S. Armageddon Repo:**
-  -[**Full README.md**](/images/armageddon.md)
+  - [**Full README.md**](/images/armageddon.md)

@@ -55,7 +55,6 @@ resource "aws_s3_bucket_policy" "public_read" {
   })
 }
 
-
 resource "aws_s3_object" "suge_waf" {
   bucket       = aws_s3_bucket.tiqs_jenkins_bucket.id
   key          = "suge-waf.jpg"
