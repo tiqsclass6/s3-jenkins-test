@@ -44,15 +44,12 @@ A simple declarative [**Jenkinsfile**](Jenkinsfile):
 ## Artifacts
 
 - **Suge WAF Output**
-![suge-waf.jpg](/images/suge-waf.jpg)
-
+- ![suge-waf.jpg](/images/suge-waf.jpg)
 - **Jenkins Pipeline Output**
-![jenkins-pipeline.jpg](/images/jenkins-pipeline.jpg)
-
+  -![jenkins-pipeline.jpg](/images/jenkins-pipeline.jpg)
 - **Jenkins Webhook Output**
-![jenkins-webhook.jpg](/images/jenkins-webhook.jpg)
-
+  - ![jenkins-webhook.jpg](/images/jenkins-webhook.jpg)
 - **S3 Bucket Output**
-![s3-bucket.jpg](/images/s3-bucket.jpg)
-
-- **T.I.Q.S. Armageddon Repo:** [**Full README.md**](https://github.com/tiqsclass6/aws-armageddon-class-7.0/blob/main/README.md)
+  - ![s3-bucket.jpg](/images/s3-bucket.jpg)
+- **T.I.Q.S. Armageddon Repo:**
+  -[**Full README.md**](/images/armageddon.md)
