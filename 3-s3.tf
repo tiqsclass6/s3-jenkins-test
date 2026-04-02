@@ -1,23 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-
-  backend "s3" {
-    bucket  = "class-7-state-files"
-    key     = "class-labs/s3-jenkins-test.tfstate"
-    region  = "us-east-1"
-    encrypt = true
-  }
-}
-
-provider "aws" {
-  region = "us-east-1"
-}
-
 resource "aws_s3_bucket" "tiqs_jenkins_bucket" {
   bucket        = "tiqsclass6-armageddon-public"
   force_destroy = true
@@ -30,9 +10,9 @@ resource "aws_s3_bucket" "tiqs_jenkins_bucket" {
 resource "aws_s3_bucket_public_access_block" "tiqs_jenkins_bucket_block" {
   bucket = aws_s3_bucket.tiqs_jenkins_bucket.id
 
-  block_public_acls       = false
+  block_public_acls       = true
+  ignore_public_acls      = true
   block_public_policy     = false
-  ignore_public_acls      = false
   restrict_public_buckets = false
 }
 
@@ -45,10 +25,10 @@ resource "aws_s3_bucket_policy" "public_read" {
     Version = "2012-10-17"
     Statement = [
       {
-        Sid       = "PublicReadGetObject"
+        Sid       = "PublicAccess"
         Effect    = "Allow"
         Principal = "*"
-        Action    = ["s3:GetObject"]
+        Action    = "s3:GetObject"
         Resource  = "${aws_s3_bucket.tiqs_jenkins_bucket.arn}/*"
       }
     ]
