@@ -41,23 +41,39 @@ A simple declarative [**Jenkinsfile**](Jenkinsfile):
 
 ---
 
-## Snyk IaC Demo
+## Snyk Demos (CLI, Jenkins Plugin, and Web UI)
 
-<https://github.com/user-attachments/assets/69bd49f1-2700-4e2e-9a1e-77234b25baad>
+- <https://github.com/user-attachments/assets/b10c02ef-9c2e-4bfa-8745-e76f5a348245>
+- <https://github.com/user-attachments/assets/ac43752a-532e-49f8-972c-7e439ef28b12>
 
-- [**Snyk Report:**](https://app.snyk.io/org/daquietstorm22/project/7f7d6689-611a-4a40-865f-9e2d733a78fa)
+- [**Snyk Report (U/I): `s3.tf (errors)`**](https://app.snyk.io/org/daquietstorm22/project/e8af82ef-22aa-4963-9c62-7829558f4b12/history/5d6355bd-fdf9-4a9e-8d12-0dd861a86e51)
 
 ---
 
 ## Artifacts
 
-- **Suge WAF Output**
-- ![suge-waf.jpg](/images/suge-waf.jpg)
-- **Jenkins Pipeline Output**
-  -![jenkins-pipeline.jpg](/images/jenkins-pipeline.jpg)
-- **Jenkins Webhook Output**
-  - ![jenkins-webhook.jpg](/images/jenkins-webhook.jpg)
-- **S3 Bucket Output**
-  - ![s3-bucket.jpg](/images/s3-bucket.jpg)
 - **T.I.Q.S. Armageddon Repo:**
   - [**Full README.md**](/images/armageddon.md)
+- **Jenkins Pipeline Output**
+  ![jenkins-pipeline.jpg](/images/jenkins-pipeline.jpg)
+- **Jenkins Webhook Output**
+  ![jenkins-webhook.jpg](/images/jenkins-webhook.jpg)
+- **S3 Bucket Output**
+  ![s3-bucket.jpg](/images/s3-bucket.jpg)
+- **Snyk CLI Output**
+  ![snyk-monitoring-pt1.jpg](/images/snyk-monitoring-pt1.jpg)
+- **Snyk Jenkins Plugin Output**
+  ![snyk-monitoring-pt2.jpg](/images/snyk-monitoring-pt2.jpg)
+  ![snyk-monitoring-pt3.jpg](/images/snyk-monitoring-pt3.jpg)
+- **Snyk Report (U/I) Output**
+  ![snyk-report-ui.jpg](/images/snyk-report-ui.jpg)
+- **Suge WAF Output**
+  - ![suge-waf.jpg](/images/suge-waf.jpg)
+
+---
+
+## Author
+
+- **Team Lead:** John Sweeney
+- **Author:** T.I.Q.S. DevSecOps
+  - [**GitHub Home**](https://github.com/tiqsclass6)

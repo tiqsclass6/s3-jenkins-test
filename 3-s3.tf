@@ -35,15 +35,14 @@ resource "aws_s3_bucket_policy" "public_read" {
   })
 }
 
-resource "aws_s3_object" "suge_waf" {
+resource "aws_s3_object" "armageddon_readme" {
   bucket       = aws_s3_bucket.tiqs_jenkins_bucket.id
-  key          = "suge-waf.jpg"
-  source       = "${path.module}/images/suge-waf.jpg"
-  content_type = "image/jpeg"
+  key          = "armageddon.md"
+  source       = "${path.module}/images/armageddon.md"
+  content_type = "text/markdown"
 
-  etag = filemd5("${path.module}/images/suge-waf.jpg")
+  etag = filemd5("${path.module}/images/armageddon.md")
 }
-
 resource "aws_s3_object" "pipeline" {
   bucket       = aws_s3_bucket.tiqs_jenkins_bucket.id
   key          = "jenkins-pipeline.jpg"
@@ -62,11 +61,47 @@ resource "aws_s3_object" "webhook" {
   etag = filemd5("${path.module}/images/jenkins-webhook.jpg")
 }
 
-resource "aws_s3_object" "armageddon_readme" {
+resource "aws_s3_object" "snyk_monitoring_pt1" {
   bucket       = aws_s3_bucket.tiqs_jenkins_bucket.id
-  key          = "armageddon.md"
-  source       = "${path.module}/images/armageddon.md"
-  content_type = "text/markdown"
+  key          = "snyk-monitoring-pt1.jpg"
+  source       = "${path.module}/images/snyk-monitoring-pt1.jpg"
+  content_type = "image/jpeg"
 
-  etag = filemd5("${path.module}/images/armageddon.md")
+  etag = filemd5("${path.module}/images/snyk-monitoring-pt1.jpg")
+}
+
+resource "aws_s3_object" "snyk_monitoring_pt2" {
+  bucket       = aws_s3_bucket.tiqs_jenkins_bucket.id
+  key          = "snyk-monitoring-pt2.jpg"
+  source       = "${path.module}/images/snyk-monitoring-pt2.jpg"
+  content_type = "image/jpeg"
+
+  etag = filemd5("${path.module}/images/snyk-monitoring-pt2.jpg")
+}
+
+resource "aws_s3_object" "snyk_monitoring_pt3" {
+  bucket       = aws_s3_bucket.tiqs_jenkins_bucket.id
+  key          = "snyk-monitoring-pt3.jpg"
+  source       = "${path.module}/images/snyk-monitoring-pt3.jpg"
+  content_type = "image/jpeg"
+
+  etag = filemd5("${path.module}/images/snyk-monitoring-pt3.jpg")
+}
+
+resource "aws_s3_object" "snyk_report_ui" {
+  bucket       = aws_s3_bucket.tiqs_jenkins_bucket.id
+  key          = "snyk-report-ui.jpg"
+  source       = "${path.module}/images/snyk-report-ui.jpg"
+  content_type = "image/jpeg"
+
+  etag = filemd5("${path.module}/images/snyk-report-ui.jpg")
+}
+
+resource "aws_s3_object" "suge_waf" {
+  bucket       = aws_s3_bucket.tiqs_jenkins_bucket.id
+  key          = "suge-waf.jpg"
+  source       = "${path.module}/images/suge-waf.jpg"
+  content_type = "image/jpeg"
+
+  etag = filemd5("${path.module}/images/suge-waf.jpg")
 }
