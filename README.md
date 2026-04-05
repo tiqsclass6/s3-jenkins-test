@@ -41,6 +41,14 @@ A simple declarative [**Jenkinsfile**](Jenkinsfile):
 
 ---
 
+## Snyk IaC Demo
+
+<https://github.com/user-attachments/assets/69bd49f1-2700-4e2e-9a1e-77234b25baad>
+
+- [**Snyk Report:**](https://app.snyk.io/org/daquietstorm22/project/7f7d6689-611a-4a40-865f-9e2d733a78fa)
+
+---
+
 ## Artifacts
 
 - **Suge WAF Output**
