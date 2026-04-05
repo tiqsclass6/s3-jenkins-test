@@ -73,18 +73,6 @@ pipeline {
             }
         }
 
-        stage('Approval Gate') {
-            when {
-                branch 'main'
-            }
-            steps {
-                timeout(time: 60, unit: 'MINUTES') {
-                    input message: 'Review the Terraform plan above and approve deployment?', 
-                          ok: 'Deploy to Infrastructure'
-                }
-            }
-        }
-
         stage('Terraform Apply') {
             steps {
                 withCredentials([[
@@ -98,28 +86,15 @@ pipeline {
             }
         }
 
-        stage('Terraform Destroy (Manual)') {
-            when {
-                expression { false }
-            }
+        stage('Terraform Destroy') {
             steps {
-                script {
-                    def destroyChoice = input(
-                        message: 'Do you want to run terraform destroy?',
-                        parameters: [
-                            choice(name: 'DESTROY', choices: ['no', 'yes'], description: 'Confirm destruction of all Terraform resources')
-                        ]
-                    )
-                    if (destroyChoice == 'yes') {
-                        withCredentials([[
-                            $class: 'AmazonWebServicesCredentialsBinding',
-                            credentialsId: 'armageddon'
-                        ]]) {
-                            sh 'terraform destroy -auto-approve'
-                        }
-                    } else {
-                        echo 'Destroy operation skipped.'
-                    }
+                withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: 'armageddon'
+                ]]) {
+                    sh '''
+                        terraform destroy -auto-approve
+                    '''
                 }
             }
         }
