@@ -39,3 +39,4 @@ terraform.rc
 .terraform.lock.hcl
 example.kubeconfig
 *.mp4
+*.pem

@@ -20,17 +20,17 @@ pipeline {
         }
 
         // Snyk CLI is commented out to skip the initial scan and directly use the Snyk Jenkins plugin for monitoring.
-        // stage('Snyk IaC Scan Test') {
-        //     steps {
-        //         withCredentials([string(credentialsId: 'snyk-api-token-string', variable: 'SNYK_TOKEN')]) {
-        //             sh '''
-        //                 export PATH=$PATH:/var/lib/jenkins/tools/io.snyk.jenkins.tools.SnykInstallation/snyk
-        //                 snyk-linux auth $SNYK_TOKEN
-        //                 snyk-linux iac test --org=$SNYK_ORG --severity-threshold=high || true
-        //             '''
-        //         }
-        //     }
-        // }
+        stage('Snyk IaC Scan Test') {
+            steps {
+                withCredentials([string(credentialsId: 'snyk-api-token-string', variable: 'SNYK_TOKEN')]) {
+                    sh '''
+                        export PATH=$PATH:/var/lib/jenkins/tools/io.snyk.jenkins.tools.SnykInstallation/snyk
+                        snyk-linux auth $SNYK_TOKEN
+                        snyk-linux iac test --org=$SNYK_ORG --severity-threshold=high || true
+                    '''
+                }
+            }
+        }
 
         stage('Snyk IaC Scan Monitor') {
             steps {
@@ -38,7 +38,7 @@ pipeline {
                     snykInstallation: 'snyk',
                     snykTokenId: 'snyk-api-token',
                     additionalArguments: '--iac --report --org=$SNYK_ORG --severity-threshold=high',
-                    failOnIssues: false,
+                    failOnIssues: true,
                     // Turn true to fail the pipeline if issues are found, false to continue and just report the issues in the Snyk dashboard
                     monitorProjectOnBuild: false
                 )
